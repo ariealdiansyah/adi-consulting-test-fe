@@ -1,0 +1,51 @@
+<div class="flex flex-wrap justify-center min-h-screen items-center flex-row overflow-hidden  py-6 sm:py-12">
+  <div class="flex justify-center bg-sky-400 rounded-md flex-wrap py-6">
+    <div class="w-full text-white text-center font-bold text-2xl pb-8 pt-2">
+      <span>Detail Employee</span>
+    </div>
+    <div class="w-80 my-4 text-white w-full">
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Username :</div>
+        <div class="flex-1 text-left px-2">{{data.username}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">First Name :</div>
+        <div class="flex-1 text-left px-2">{{data.firstName}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Last Name :</div>
+        <div class="flex-1 text-left px-2">{{data.lastName}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Last Name :</div>
+        <div class="flex-1 text-left px-2">{{data.lastName}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Email :</div>
+        <div class="flex-1 text-left px-2">{{data.email}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Birthday :</div>
+        <div class="flex-1 text-left px-2">{{data.birthDate | date:'EEEE d MMMM y'}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Salary :</div>
+        <div class="flex-1 text-left px-2">{{data.basicSalary | currency:"Rp ":"symbol":'1.2-2'}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Status :</div>
+        <div class="flex-1 text-left px-2">{{data.status}}</div>
+      </div>
+      <div class="flex flex-row p-2">
+        <div class="flex-1 text-right px-2">Group :</div>
+        <div class="flex-1 text-left px-2">{{data.group}}</div>
+      </div>
+    </div>
+    <div class="justify-center my-4">
+      <button (click)="goBack()"
+        class="bg-slate-300 text-slate rounded-md hover:bg-sky-500 hover:text-white px-4 py-2 outline-1">
+        Back
+      </button>
+    </div>
+  </div>
+</div>

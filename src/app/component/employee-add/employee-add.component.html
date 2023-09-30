@@ -1,0 +1,96 @@
+<div class="flex flex-wrap justify-center min-h-screen items-center flex-row overflow-hidden  py-6 sm:py-12">
+  <div class="flex justify-center bg-sky-400 rounded-md flex-wrap py-6">
+    <div class="w-full text-white text-center font-bold text-2xl pb-8 pt-2">
+      <span>Add Employee</span>
+    </div>
+    <form [formGroup]="formAdd">
+      <div class="w-80 my-4 text-white">
+        <div class="p-2 flex flex-col">
+          <label>Username</label>
+          <input type="text" name="username" id="username" formControlName="username"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="username" required>
+          <span *ngIf="formAdd.hasError('required','username') && formAdd.controls['username'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*username is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>First Name</label>
+          <input type="text" name="firstName" id="firstName" formControlName="firstName"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="firstName" required>
+          <span *ngIf="formAdd.hasError('required','firstName') && formAdd.controls['firstName'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*First Name is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Last Name</label>
+          <input type="text" name="lastName" id="lastName" formControlName="lastName"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="lastName" required>
+          <span *ngIf="formAdd.hasError('required','lastName') && formAdd.controls['lastName'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*Last Name is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Email</label>
+          <input type="text" name="email" id="email" formControlName="email"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="email" required>
+          <span *ngIf="formAdd.hasError('required','email') && formAdd.controls['email'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*Email is Required</span>
+          <span *ngIf="formAdd.hasError('email','email') && formAdd.controls['email'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*Wrong Format Email</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Birthdate</label>
+          <div class="flex flex-row">
+            <div class="flex flex-col">
+              <input matInput [matDatepicker]="birthDate" formControlName="birthDate" [max]="maxDate"
+                class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            </div>
+            <div class="flex-col bg-slate-100 rounded-xl ml-1">
+              <mat-datepicker-toggle matIconSuffix [for]="birthDate"></mat-datepicker-toggle>
+              <mat-datepicker #birthDate></mat-datepicker>
+            </div>
+          </div>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Salary</label>
+          <input type="number" name="basicSalary" id="basicSalary" formControlName="basicSalary"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7   text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="basicSalary" required>
+          <span *ngIf="formAdd.hasError('required','basicSalary') && formAdd.controls['basicSalary'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*Salary is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Status</label>
+          <input type="text" name="status" id="status" formControlName="status"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="status" required>
+          <span *ngIf="formAdd.hasError('required','status') && formAdd.controls['status'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*Status is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Group</label>
+          <input type="text" name="group" id="group" formControlName="group"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="group" required>
+          <span *ngIf="formAdd.hasError('required','group') && formAdd.controls['group'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*Group is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <label>Description</label>
+          <textarea name="description" id="description" formControlName="description"
+            class="rounded-xl text-black px-2 border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="description" required> </textarea>
+          <span *ngIf="formAdd.hasError('required','description') && formAdd.controls['description'].dirty"
+            class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*description is Required</span>
+        </div>
+        <div class="p-2 flex flex-col">
+          <button type="submit" (click)="add()"
+            class="bg-slate-100 text-black rounded-md mx-auto px-8 py-2 hover:bg-gray-400 hover:text-white">
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
