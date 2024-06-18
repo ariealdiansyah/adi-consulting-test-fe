@@ -84,11 +84,16 @@
           <span *ngIf="formAdd.hasError('required','description') && formAdd.controls['description'].dirty"
             class="text-red-500 text-sm font-bold opacity-75 mt-0.5">*description is Required</span>
         </div>
-        <div class="p-2 flex flex-col">
+        <div class="p-2 flex justify-evenly w-full">
+          <button (click)="goBack()"
+            class="bg-gray-500 text-white rounded-md hover:bg-orange-500 hover:text-purple px-8 py-2 outline-1">
+            Back
+          </button>
           <button type="submit" (click)="add()"
-            class="bg-slate-100 text-black rounded-md mx-auto px-8 py-2 hover:bg-gray-400 hover:text-white">
+            class="bg-slate-100 text-black rounded-md px-8 py-2 hover:bg-gray-400 hover:text-white ml-2">
             Add
           </button>
+
         </div>
       </div>
     </form>

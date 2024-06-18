@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -14,8 +15,9 @@ export class EmployeeAddComponent implements OnInit {
   fb = inject(FormBuilder)
   loading = false
   maxDate: Date;
+  title = 'Add Employee'
 
-  constructor(private router: Router, private service: EmployeeService) {
+  constructor(private router: Router, private service: EmployeeService, private location: Location,) {
     this.maxDate = new Date();
   }
   ngOnInit(): void {
@@ -50,5 +52,9 @@ export class EmployeeAddComponent implements OnInit {
     }
     this.service.addEmployee(data)
     this.router.navigateByUrl('/employee')
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

@@ -13,6 +13,7 @@ import { MatTable } from '@angular/material/table';
 export class EmployeeListComponent {
   displayedColumns: string[] = ['name', 'email', 'birthDate', 'basicSalary', 'status', 'group', 'description', 'action'];
   dataEmployee: Array<Employee> = []
+  title = 'List Employee'
 
   public constructor(private location: Location, private router: Router, private employeeService: EmployeeService) {
     this.dataEmployee = this.employeeService.getEmployee();

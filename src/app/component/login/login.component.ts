@@ -2,10 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
-  FormGroupDirective,
-  NgForm,
   Validators
 } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
@@ -34,8 +31,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true
-    const { email, password } = this.formLogin.value
-    console.log('test', email, password)
     setTimeout(async () => {
       this.loading = false
       const result = await this.service.getUser(this.formLogin.value)

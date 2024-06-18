@@ -15,6 +15,7 @@ import { EmployeeAddComponent } from './component/employee-add/employee-add.comp
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TitlePageComponent } from './directive/title-page/title-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HomeComponent,
     EmployeeListComponent,
     EmployeeDetailComponent,
-    EmployeeAddComponent
+    EmployeeAddComponent,
+    TitlePageComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 })
 export class EmployeeDetailComponent {
   data!: Employee
+  title = 'Detail Employee'
   constructor(private location: Location, private service: EmployeeService, private route: ActivatedRoute,) {
     this.data = this.service.getDetailEmployee(parseInt(this.route.snapshot.params['id']))
   }
